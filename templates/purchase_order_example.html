@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>
+        JB PO Creator
+    </title>
+
+    <style>
+
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #4DAFE1;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 2px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #00507a;
+            color: white;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <img style="margin: 25px 5px 5px" src="{{url_for('static', filename='JB_logo.png')}}"  width="200px" height="auto" align="middle" />
+    <h1 style="color: white;">Purchase Order Amigo</h1>
+
+    <!-- Create Form -->
+    <form id="form">
+
+        <!-- Details -->
+        <div class="form-control">
+            <label for="companyName" id="label-name">
+                Company Name:
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="companyName"
+                   placeholder="Enter your company name" />
+        </div>
+
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Name:
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="name"
+                   placeholder="Enter your name" />
+        </div>
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Email:
+            </label>
+
+            <!-- Input Type Email-->
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email" />
+        </div>
+
+        <div class="form-control">
+            <label for="POnumber" id="label-purchaseOrderNumber">
+                Purchase Order #:
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="POnumber"
+                   placeholder="Enter your Purchase Order Number" />
+        </div>
+
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Book Options:
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="role" id="role">
+
+                <option value="Choose">Choose Book</option>
+                <option value="NB100">NB 100 (7" x 10")</option>
+                <option value="NB150">NB 150 (7" x 10")</option>
+                <option value="NB170">NB 170 (7" x 10")</option>
+                <option value="NP700">NP 700 (5" x 7")</option>
+                <option value="NP770">NP 770 (5" x 7")</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Cover Material:
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="role" id="role">
+                <option value="Choose">Choose Material</option>
+                <option value="SEAFOAM">Seafoam (#6073)</option>
+                <option value="PINK">Pink (#6141)</option>
+                <option value="Royal Blue">Royal Blue (#6402)</option>
+                <option value="Orange Chip">Orange Chip (#6404)</option>
+                <option value="SADDLE">Saddle (#6405)</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label>Choose Book:
+                <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">Case bound</input></label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">Perfect Bound</input></label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">Wire Bound</input></label>
+        </div>
+
+        <div class="form-control">
+            <label for="comment">
+                Special Instructions:
+            </label>
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment"
+                placeholder="Enter your comment here">
+            </textarea>
+        </div>
+
+        <div class="form-control">
+            <label>
+                Would you recommend JournalBooks
+                to a colleague?
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio"
+                       id="recommed-1"
+                       name="recommed">Yes</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio"
+                       id="recommed-2"
+                       name="recommed">No</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio"
+                       id="recommed-3"
+                       name="recommed">Maybe</input>
+            </label>
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</body>
+
+</html>
